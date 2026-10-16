@@ -2,5 +2,9 @@
   "item.waystonefinder.waystone_locator": "Waystone Rute",
   "message.waystonefinder.found": "A dormant Waystone found nearby: %s blocks away",
   "message.waystonefinder.nearby": "A dormant Waystone is very close",
-  "message.waystonefinder.not_found": "No dormant Waystone found nearby"
+  "message.waystonefinder.not_found": "No dormant Waystone found nearby",
+  "waystonefinder.configuration.durability": "Locator durability",
+  "waystonefinder.configuration.searchRadius": "Search radius",
+  "waystonefinder.configuration.proximityThreshold": "Proximity radius",
+  "waystonefinder.configuration.breakableLocator": "Is Locator breakable?"
 }
