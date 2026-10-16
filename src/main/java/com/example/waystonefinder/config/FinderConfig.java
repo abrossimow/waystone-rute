@@ -3,16 +3,16 @@ package com.example.waystonefinder.config;
 import net.blay09.mods.balm.api.config.*;
 
 @Config("waystonefinder")
-public class FinderConfig {
+public class FinderConfig implements BalmConfigData {
 
     @Comment("Maximum durability of the Waystone Locator.")
-    public int durability = 32;
+    public int durability = 16;
 
     @Comment("Maximum distance in blocks searched by the Waystone Locator.")
-    public int searchRadius = 128;
+    public int searchRadius = 200;
 
     @Comment("Minimum Distance before Locator stops giving actual distance.")
-    public int proximityThreshold = 16;
+    public int proximityThreshold = 28;
 
     @Comment("Whether the Waystone Locator can break when its durability is depleted.")
     public boolean breakableLocator = true;
