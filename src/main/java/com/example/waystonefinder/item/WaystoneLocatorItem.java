@@ -22,7 +22,7 @@ public final class WaystoneLocatorItem extends Item {
 
     @Override
     public int getMaxDamage(ItemStack stack) {
-        return FinderConfig.LOCATOR_DURABILITY.get();
+        return FinderConfig.getActive().durability;
     }
 
 
@@ -51,11 +51,12 @@ public final class WaystoneLocatorItem extends Item {
             return InteractionResultHolder.pass(stack);
         }
 
-        int radius = FinderConfig.SEARCH_RADIUS.get();
+        int radius = FinderConfig.getActive().searchRadius;
+        int proximity = FinderConfig.getActive().proximityThreshold;
         var nearestDistance = WaystoneTracker.findNearestDistance(serverPlayer, radius);
 
         if (nearestDistance.isPresent()) {
-            if (nearestDistance.get() < FinderConfig.PROXIMITY_THRESHOLD.get()) {
+            if (nearestDistance.get() < proximity) {
                 serverPlayer.displayClientMessage(
                         Component.translatable(
                                 "message.waystonefinder.nearby"
@@ -84,7 +85,7 @@ public final class WaystoneLocatorItem extends Item {
                 ? EquipmentSlot.MAINHAND
                 : EquipmentSlot.OFFHAND;
 
-        if (FinderConfig.BREAKABLE_LOCATOR.get()) {
+        if (FinderConfig.getActive().breakableLocator) {
             stack.hurtAndBreak(1, serverPlayer, slot);
         }
         return InteractionResultHolder.success(stack);

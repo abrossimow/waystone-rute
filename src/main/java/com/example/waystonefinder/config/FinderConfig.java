@@ -1,40 +1,30 @@
 package com.example.waystonefinder.config;
 
-import net.neoforged.neoforge.common.ModConfigSpec;
-import net.neoforged.fml.config.ModConfig;
+import net.blay09.mods.balm.api.config.*;
 
-public final class FinderConfig {
-    private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
+@Config("waystonefinder")
+public class FinderConfig {
 
-    public static final ModConfigSpec.IntValue LOCATOR_DURABILITY;
-    public static final ModConfigSpec.IntValue SEARCH_RADIUS;
-    public static final ModConfigSpec.IntValue PROXIMITY_THRESHOLD;
-    public static final ModConfigSpec.BooleanValue BREAKABLE_LOCATOR;
-    public static final ModConfigSpec SPEC;
+    @Comment("Maximum durability of the Waystone Locator.")
+    public int durability = 32;
 
-    static {
-        BUILDER.push("locator");
+    @Comment("Maximum distance in blocks searched by the Waystone Locator.")
+    public int searchRadius = 128;
 
-        LOCATOR_DURABILITY = BUILDER
-                .comment("Maximum durability of the Waystone Locator. Takes effect when the item is registered; restart after changing.")
-                .defineInRange("durability", 32, 16, 256);
+    @Comment("Minimum Distance before Locator stops giving actual distance.")
+    public int proximityThreshold = 16;
 
-        SEARCH_RADIUS = BUILDER
-                .comment("Maximum distance in blocks searched by the Waystone Locator.")
-                .defineInRange("searchRadius", 128, 1, 6666);
+    @Comment("Whether the Waystone Locator can break when its durability is depleted.")
+    public boolean breakableLocator = true;
 
-        PROXIMITY_THRESHOLD = BUILDER
-                .comment("Distance threshold Waystone Locator stops telling the actual distance.")
-                .defineInRange("proximityThreshold", 12, 1, 256);
+    private static volatile FinderConfig active = new FinderConfig();
 
-        BREAKABLE_LOCATOR = BUILDER
-                .comment("Whether the Waystone Locator can break when its durability is depleted.")
-                .define("breakableLocator", true);
-
-        BUILDER.pop();
-        SPEC = BUILDER.build();
+    public static FinderConfig getActive() {
+        return active;
     }
 
-    private FinderConfig() {
+    public static void setActive(FinderConfig config) {
+        active = config;
     }
 }
+
