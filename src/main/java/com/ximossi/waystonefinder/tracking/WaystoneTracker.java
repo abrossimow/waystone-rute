@@ -1,4 +1,4 @@
-package com.example.waystonefinder.tracking;
+package com.ximossi.waystonefinder.tracking;
 
 import net.blay09.mods.waystones.api.Waystone;
 import net.blay09.mods.waystones.api.WaystoneTypes;

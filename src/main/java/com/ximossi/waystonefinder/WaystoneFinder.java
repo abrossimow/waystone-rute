@@ -1,7 +1,7 @@
-package com.example.waystonefinder;
+package com.ximossi.waystonefinder;
 
-import com.example.waystonefinder.config.FinderConfig;
-import com.example.waystonefinder.registry.ModItems;
+import com.ximossi.waystonefinder.config.FinderConfig;
+import com.ximossi.waystonefinder.registry.ModItems;
 import net.blay09.mods.balm.api.Balm;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;

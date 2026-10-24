@@ -1,8 +1,7 @@
-package com.example.waystonefinder.registry;
+package com.ximossi.waystonefinder.registry;
 
-import com.example.waystonefinder.WaystoneFinder;
-import com.example.waystonefinder.config.FinderConfig;
-import com.example.waystonefinder.item.WaystoneLocatorItem;
+import com.ximossi.waystonefinder.WaystoneFinder;
+import com.ximossi.waystonefinder.item.WaystoneLocatorItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;

@@ -1,4 +1,4 @@
-package com.example.waystonefinder.config;
+package com.ximossi.waystonefinder.config;
 
 import net.blay09.mods.balm.api.config.*;
 

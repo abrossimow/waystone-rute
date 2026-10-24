@@ -1,7 +1,7 @@
-package com.example.waystonefinder.item;
+package com.ximossi.waystonefinder.item;
 
-import com.example.waystonefinder.config.FinderConfig;
-import com.example.waystonefinder.tracking.WaystoneTracker;
+import com.ximossi.waystonefinder.config.FinderConfig;
+import com.ximossi.waystonefinder.tracking.WaystoneTracker;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
