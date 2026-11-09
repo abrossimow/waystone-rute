@@ -5,14 +5,13 @@ import com.ximossi.waystonefinder.registry.ModItems;
 import com.ximossi.waystonefinder.registry.ModCreativeTabs;
 import net.blay09.mods.balm.api.Balm;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 
 @Mod(WaystoneFinder.MOD_ID)
 public final class WaystoneFinder {
     public static final String MOD_ID = "waystonefinder";
 
-    public WaystoneFinder(IEventBus modEventBus, ModContainer modContainer) {
+    public WaystoneFinder(IEventBus modEventBus) {
         Balm.config().registerConfig(FinderConfig.class);
         Balm.config().onConfigAvailable(
                 FinderConfig.class,
