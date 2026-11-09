@@ -2,6 +2,7 @@ package com.ximossi.waystonefinder;
 
 import com.ximossi.waystonefinder.config.FinderConfig;
 import com.ximossi.waystonefinder.registry.ModItems;
+import com.ximossi.waystonefinder.registry.ModCreativeTabs;
 import net.blay09.mods.balm.api.Balm;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -19,5 +20,6 @@ public final class WaystoneFinder {
         );
 
         ModItems.ITEMS.register(modEventBus);
+        modEventBus.addListener(ModCreativeTabs::addCreative);
     }
 }
